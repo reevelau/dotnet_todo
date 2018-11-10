@@ -29,7 +29,7 @@ namespace todo
         public void ConfigureServices(IServiceCollection services)
         {   
             services.AddDbContext<TodoContext>(opt => 
-                opt.UseInMemoryDatabase("TodoList"));
+                opt.UseSqlServer("Server=localhost,1433\\\\Catalog=todo_cat;Database=todo;User=SA;Password=<StrongPasswordYouSet>;"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
